@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aquamarine;
+    color: #1e293b;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Organizaçãp geral da página */
+
+.layout-pagina{
+    display: grid;
+
+    grid-template-areas: 
+    "header header"
+    "sidebar main"
+    "footer footer"
+    ;
+
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+
+.cabecalho{
+    grid-area: header;
+
+
+    background-color: rgb(6, 105, 72);
+    color: black;
+    padding: 25px;
+    text-align: center;
+}
+
+.cabecalho h1{
+    margin: 0 0 10px;
+}
+
+.cabecalho p{
+    margin: 0;
+}
+
+/* Menu lateral */
+
+.barra-lateral{
+    grid-area: sidebar;
+
+    background-color: rgb(6, 105, 72);
+    padding: 20px;
+}
+
+.barra-lateral h2{
+    color: antiquewhite;
+}
+
+.barra-lateral ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.barra-lateral li{
+    margin-bottom: 10px;
+}
+
+.barra-lateral a{
+    display: block;
+    background-color: aquamarine;
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.barra-lateral a:hover{
+    background-color: rgb(52, 167, 128);
+}
+
+/* Conteúdo principal */
+
+.conteudo-principal{
+    grid-area: main;
+    padding: 30px;
+}
+
+.conteudo-principal h2{
+    margin-top: 0;
+    color: rgb(0, 100, 67);
+}
+
+.grid-principal{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 2rem;
+}
+
+.card{
+    background-color: white;
+    padding: 20px;
+    border: 1px solid seagreen;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px black;
+}
+
+.card h3{
+    margin-top: 0;
+    color: black;
+}
+
+.card p{
+    line-height: 1.6;
+}
+
+.card a{
+    display: inline-block;
+    background-color: rgb(6, 105, 72);
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
