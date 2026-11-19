@@ -1,0 +1,345 @@
+/* Estilos gerais da página */
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #20283a;
+    background: #f5f7fb;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    --fundo: #f5f7fb;
+    --cartao: #ffffff;
+    --texto: #20283a;
+    --texto-suave: #687386;
+    --borda: #e4e8f0;
+    --destaque: #6658d3;
+    --destaque-hover: #5144bb;
+    margin: 0;
+    min-height: 100vh;
+    background: var(--fundo);
+    color: var(--texto);
+    transition: background 0.2s, color 0.2s;
+}
+
+body.tema-escuro {
+    --fundo: #171a26;
+    --cartao: #222637;
+    --texto: #f1f2f8;
+    --texto-suave: #b0b6c8;
+    --borda: #353b50;
+    --destaque: #9b90ff;
+    --destaque-hover: #b0a8ff;
+}
+
+.topo {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.marca {
+    color: var(--texto);
+    font-size: 21px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.marca span {
+    color: var(--destaque);
+}
+
+.botao-tema {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    background: var(--cartao);
+    color: var(--texto);
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.botao-tema:hover {
+    border-color: var(--destaque);
+}
+
+.conteudo {
+    width: min(1100px, calc(100% - 40px));
+    min-height: calc(100vh - 145px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 75px;
+    padding: 35px 0 65px;
+}
+
+.etiqueta,
+.resultado-etiqueta {
+    color: var(--destaque);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+h1 {
+    max-width: 610px;
+    margin: 15px 0;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.08;
+    letter-spacing: -2.5px;
+}
+
+h1 span {
+    color: var(--destaque);
+}
+
+.introducao {
+    max-width: 540px;
+    color: var(--texto-suave);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.cartao-formulario {
+    max-width: 530px;
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+    background: var(--cartao);
+    box-shadow: 0 12px 35px rgba(35, 43, 70, 0.06);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 19px;
+}
+
+.campo label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    outline: none;
+    background: var(--fundo);
+    color: var(--texto);
+    font: inherit;
+    font-size: 14px;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: var(--destaque);
+    box-shadow: 0 0 0 3px rgba(102, 88, 211, 0.12);
+}
+
+.botao-principal {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--destaque);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.botao-principal:hover {
+    background: var(--destaque-hover);
+    transform: translateY(-1px);
+}
+
+.aviso {
+    margin: 14px 0 0;
+    color: var(--texto-suave);
+    font-size: 11px;
+    text-align: center;
+}
+
+.resultado {
+    max-width: 530px;
+    margin-top: 18px;
+    padding: 22px 24px;
+    border: 1px solid rgba(102, 88, 211, 0.3);
+    border-left: 4px solid var(--destaque);
+    border-radius: 10px;
+    background: var(--cartao);
+}
+
+.resultado[hidden] {
+    display: none;
+}
+
+.resultado h2 {
+    margin: 8px 0;
+    font-size: 19px;
+}
+
+.resultado p:last-child {
+    margin-bottom: 0;
+    color: var(--texto-suave);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.painel-lateral {
+    padding: 27px;
+    border: 1px solid var(--borda);
+    border-radius: 17px;
+    background: var(--cartao);
+    box-shadow: 0 15px 40px rgba(35, 43, 70, 0.05);
+}
+
+.painel-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--borda);
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.ponto {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #48b78b;
+}
+
+.trilha-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.numero {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 10px;
+    background: rgba(102, 88, 211, 0.1);
+    color: var(--destaque);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.trilha-item strong {
+    font-size: 14px;
+}
+
+.trilha-item p {
+    margin: 5px 0 0;
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.check {
+    margin-left: auto;
+    color: #48b78b;
+    font-weight: 800;
+}
+
+.nota-painel {
+    display: flex;
+    gap: 12px;
+    margin-top: 23px;
+    padding: 15px;
+    border-radius: 10px;
+    background: var(--fundo);
+}
+
+.nota-painel span {
+    color: var(--destaque);
+}
+
+.nota-painel p {
+    margin: 0;
+    color: var(--texto-suave);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.rodape {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    border-top: 1px solid var(--borda);
+    color: var(--texto-suave);
+    font-size: 11px;
+}
+
+/* Ajustes para celulares e telas menores */
+@media (max-width: 760px) {
+    .conteudo {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 25px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .painel-lateral {
+        max-width: 530px;
+    }
+
+    .rodape {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .topo,
+    .conteudo,
+    .rodape {
+        width: min(100% - 28px, 1100px);
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .cartao-formulario,
+    .painel-lateral {
+        padding: 19px;
+    }
+
+    .botao-tema {
+        padding: 9px 10px;
+    }
+}
